@@ -11,7 +11,7 @@ function Dashboard() {
     const getProfile = async () => {
       try {
         const response = await fetch(
-          "http://localhost:4001/api/auth/profile",
+          `${import.meta.env.VITE_API_URL}/api/auth/profile`,
           {
             method: "GET",
             credentials: "include",
@@ -38,7 +38,7 @@ function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:4001/api/auth/logout", {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
